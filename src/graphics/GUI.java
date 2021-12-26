@@ -375,7 +375,9 @@ public class GUI {
 
 			@Override
 			public void focusLost(FocusEvent e) {
-				
+					if(configuringPortTextField.getText().equals(""))
+						return;
+					
 					webServer.setPortNumber(Integer.parseInt(configuringPortTextField.getText()));
 				
 				
@@ -393,6 +395,9 @@ public class GUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+					if(configuringPortTextField.getText().equals(""))
+						return;
+				
 					webServer.setPortNumber(Integer.parseInt(configuringPortTextField.getText()));
 			}
 

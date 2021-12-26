@@ -30,7 +30,7 @@ public class WebServer extends Thread {
 
 	private volatile ServerState serverState;
 
-	private int portNumber;
+	private int portNumber=2400;
 
 	private String address;
 

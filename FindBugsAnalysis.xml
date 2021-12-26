@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1640554845891" analysisTimestamp="1640555089799" release="">
+  <Project projectName="WebServer">
+    <Jar>C:\Users\cerna\Desktop\VVS-20211225T123636Z-001\VVS\webserver\webserver</Jar>
+    <SrcDir>C:\Users\cerna\Desktop\VVS-20211225T123636Z-001\VVS\webserver\webserver\src</SrcDir>
+  </Project>
+  <BugInstance type="VO_VOLATILE_REFERENCE_TO_ARRAY" priority="3" rank="17" abbrev="VO" category="MT_CORRECTNESS">
+    <Class classname="graphics.GUI">
+      <SourceLine classname="graphics.GUI" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Class>
+    <Field classname="graphics.GUI" name="$SWITCH_TABLE$webserver$WebServer$ServerState" signature="[I" isStatic="true">
+      <SourceLine classname="graphics.GUI" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="3" rank="20" abbrev="REC" category="STYLE">
+    <Class classname="graphics.GUI$1">
+      <SourceLine classname="graphics.GUI$1" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Class>
+    <Method classname="graphics.GUI$1" name="focusLost" signature="(Ljava/awt/event/FocusEvent;)V" isStatic="false">
+      <SourceLine classname="graphics.GUI$1" start="303" end="324" startBytecode="0" endBytecode="275" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Method>
+    <SourceLine classname="graphics.GUI$1" start="320" end="320" startBytecode="122" endBytecode="122" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="3" rank="20" abbrev="REC" category="STYLE">
+    <Class classname="graphics.GUI$2">
+      <SourceLine classname="graphics.GUI$2" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Class>
+    <Method classname="graphics.GUI$2" name="focusLost" signature="(Ljava/awt/event/FocusEvent;)V" isStatic="false">
+      <SourceLine classname="graphics.GUI$2" start="341" end="363" startBytecode="0" endBytecode="275" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Method>
+    <SourceLine classname="graphics.GUI$2" start="359" end="359" startBytecode="122" endBytecode="122" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="3" rank="20" abbrev="REC" category="STYLE">
+    <Class classname="graphics.GUI$6">
+      <SourceLine classname="graphics.GUI$6" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Class>
+    <Method classname="graphics.GUI$6" name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" isStatic="false">
+      <SourceLine classname="graphics.GUI$6" start="453" end="472" startBytecode="0" endBytecode="239" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Method>
+    <SourceLine classname="graphics.GUI$6" start="467" end="467" startBytecode="103" endBytecode="103" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="3" rank="20" abbrev="REC" category="STYLE">
+    <Class classname="graphics.GUI$9">
+      <SourceLine classname="graphics.GUI$9" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Class>
+    <Method classname="graphics.GUI$9" name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" isStatic="false">
+      <SourceLine classname="graphics.GUI$9" start="539" end="557" startBytecode="0" endBytecode="239" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+    </Method>
+    <SourceLine classname="graphics.GUI$9" start="553" end="553" startBytecode="103" endBytecode="103" sourcefile="GUI.java" sourcepath="graphics/GUI.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="1" rank="15" abbrev="DLS" category="STYLE">
+    <Class classname="testing.WebServerTest">
+      <SourceLine classname="testing.WebServerTest" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    </Class>
+    <Method classname="testing.WebServerTest" name="testStartUpServer" signature="()V" isStatic="false">
+      <SourceLine classname="testing.WebServerTest" start="49" end="58" startBytecode="0" endBytecode="46" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    </Method>
+    <LocalVariable name="serverSocket" register="1" pc="28" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="testing.WebServerTest" start="51" end="51" startBytecode="27" endBytecode="27" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="serverSocket"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="1" rank="15" abbrev="DLS" category="STYLE">
+    <Class classname="testing.WebServerTest">
+      <SourceLine classname="testing.WebServerTest" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    </Class>
+    <Method classname="testing.WebServerTest" name="testStartUpServer" signature="()V" isStatic="false">
+      <SourceLine classname="testing.WebServerTest" start="49" end="58" startBytecode="0" endBytecode="46" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    </Method>
+    <LocalVariable name="webServerTest" register="5" pc="101" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="testing.WebServerTest" start="55" end="55" startBytecode="99" endBytecode="99" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="webServerTest"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE">
+    <Class classname="testing.WebServerTest">
+      <SourceLine classname="testing.WebServerTest" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    </Class>
+    <Method classname="testing.WebServerTest" name="testStartUpServer" signature="()V" isStatic="false">
+      <SourceLine classname="testing.WebServerTest" start="49" end="58" startBytecode="0" endBytecode="46" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    </Method>
+    <LocalVariable name="addressTest" register="2" pc="17" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="testing.WebServerTest" start="50" end="50" startBytecode="16" endBytecode="16" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="addressTest"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE">
+    <Class classname="testing.WebServerTest">
+      <SourceLine classname="testing.WebServerTest" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    </Class>
+    <Method classname="testing.WebServerTest" name="testStartUpServer" signature="()V" isStatic="false">
+      <SourceLine classname="testing.WebServerTest" start="49" end="58" startBytecode="0" endBytecode="46" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    </Method>
+    <LocalVariable name="serverStateTest" register="3" pc="32" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="testing.WebServerTest" start="53" end="53" startBytecode="31" endBytecode="31" sourcefile="WebServerTest.java" sourcepath="testing/WebServerTest.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="serverStateTest"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="webserver.WebServer">
+      <SourceLine classname="webserver.WebServer" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Class>
+    <Method classname="webserver.WebServer" name="run" signature="()V" isStatic="false">
+      <SourceLine classname="webserver.WebServer" start="131" end="204" startBytecode="0" endBytecode="1132" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader"/>
+    </Method>
+    <SourceLine classname="webserver.WebServer" start="137" end="137" startBytecode="39" endBytecode="39" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="webserver.WebServer">
+      <SourceLine classname="webserver.WebServer" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Class>
+    <Method classname="webserver.WebServer" name="run" signature="()V" isStatic="false">
+      <SourceLine classname="webserver.WebServer" start="131" end="204" startBytecode="0" endBytecode="1132" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Method>
+    <Method classname="java.io.PrintWriter" name="&lt;init&gt;" signature="(Ljava/io/OutputStream;Z)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintWriter"/>
+    </Method>
+    <SourceLine classname="webserver.WebServer" start="134" end="134" startBytecode="20" endBytecode="20" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="webserver.WebServer">
+      <SourceLine classname="webserver.WebServer" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Class>
+    <Method classname="webserver.WebServer" name="run" signature="()V" isStatic="false">
+      <SourceLine classname="webserver.WebServer" start="131" end="204" startBytecode="0" endBytecode="1132" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="getBytes" signature="()[B" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String"/>
+    </Method>
+    <SourceLine classname="webserver.WebServer" start="192" end="192" startBytecode="354" endBytecode="354" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="webserver.WebServer">
+      <SourceLine classname="webserver.WebServer" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Class>
+    <Method classname="webserver.WebServer" name="sendResponse" signature="(Ljava/net/Socket;Ljava/lang/String;Ljava/lang/String;[B)V" isStatic="true">
+      <SourceLine classname="webserver.WebServer" start="209" end="217" startBytecode="0" endBytecode="211" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="getBytes" signature="()[B" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String"/>
+    </Method>
+    <SourceLine classname="webserver.WebServer" start="210" end="210" startBytecode="25" endBytecode="25" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    <SourceLine classname="webserver.WebServer" start="211" end="211" startBytecode="55" endBytecode="55" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="webserver.WebServer" start="212" end="212" startBytecode="65" endBytecode="65" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="webserver.WebServer" start="214" end="214" startBytecode="82" endBytecode="82" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="DM_EXIT" priority="2" rank="16" abbrev="Dm" category="BAD_PRACTICE">
+    <Class classname="webserver.WebServer">
+      <SourceLine classname="webserver.WebServer" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Class>
+    <Method classname="webserver.WebServer" name="run" signature="()V" isStatic="false">
+      <SourceLine classname="webserver.WebServer" start="131" end="204" startBytecode="0" endBytecode="1132" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Method>
+    <SourceLine classname="webserver.WebServer" start="202" end="202" startBytecode="409" endBytecode="409" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+  </BugInstance>
+  <BugInstance type="DM_EXIT" priority="2" rank="16" abbrev="Dm" category="BAD_PRACTICE">
+    <Class classname="webserver.WebServer">
+      <SourceLine classname="webserver.WebServer" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Class>
+    <Method classname="webserver.WebServer" name="startUpServer" signature="()V" isStatic="false">
+      <SourceLine classname="webserver.WebServer" start="69" end="104" startBytecode="0" endBytecode="506" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Method>
+    <SourceLine classname="webserver.WebServer" start="90" end="90" startBytecode="110" endBytecode="110" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    <SourceLine classname="webserver.WebServer" start="101" end="101" startBytecode="133" endBytecode="133" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SC_START_IN_CTOR" priority="3" rank="17" abbrev="SC" category="MT_CORRECTNESS">
+    <Class classname="webserver.WebServer">
+      <SourceLine classname="webserver.WebServer" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Class>
+    <Method classname="webserver.WebServer" name="&lt;init&gt;" signature="(Ljava/net/Socket;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILwebserver/WebServer$ServerState;)V" isStatic="false">
+      <SourceLine classname="webserver.WebServer" start="117" end="126" startBytecode="0" endBytecode="195" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Method>
+    <Method classname="webserver.WebServer" name="start" signature="()V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="webserver.WebServer" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+    </Method>
+    <SourceLine classname="webserver.WebServer" start="125" end="125" startBytecode="50" endBytecode="50" sourcefile="WebServer.java" sourcepath="webserver/WebServer.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="46">
+    <MissingClass>java.awt.Dimension</MissingClass>
+    <MissingClass>java.awt.GridBagConstraints</MissingClass>
+    <MissingClass>java.awt.GridBagLayout</MissingClass>
+    <MissingClass>java.awt.GridLayout</MissingClass>
+    <MissingClass>java.awt.Image</MissingClass>
+    <MissingClass>java.awt.Insets</MissingClass>
+    <MissingClass>java.awt.event.ActionEvent</MissingClass>
+    <MissingClass>java.io.BufferedReader</MissingClass>
+    <MissingClass>java.io.File</MissingClass>
+    <MissingClass>java.io.IOException</MissingClass>
+    <MissingClass>java.io.InputStreamReader</MissingClass>
+    <MissingClass>java.io.OutputStream</MissingClass>
+    <MissingClass>java.io.PrintStream</MissingClass>
+    <MissingClass>java.io.PrintWriter</MissingClass>
+    <MissingClass>java.io.Serializable</MissingClass>
+    <MissingClass>java.lang.Boolean</MissingClass>
+    <MissingClass>java.lang.Enum</MissingClass>
+    <MissingClass>java.lang.Error</MissingClass>
+    <MissingClass>java.lang.IllegalAccessError</MissingClass>
+    <MissingClass>java.lang.Integer</MissingClass>
+    <MissingClass>java.lang.InterruptedException</MissingClass>
+    <MissingClass>java.lang.NoSuchFieldError</MissingClass>
+    <MissingClass>java.lang.NullPointerException</MissingClass>
+    <MissingClass>java.lang.Object</MissingClass>
+    <MissingClass>java.lang.String</MissingClass>
+    <MissingClass>java.lang.StringBuilder</MissingClass>
+    <MissingClass>java.lang.System</MissingClass>
+    <MissingClass>java.lang.Thread</MissingClass>
+    <MissingClass>java.net.InetAddress</MissingClass>
+    <MissingClass>java.net.ServerSocket</MissingClass>
+    <MissingClass>java.net.Socket</MissingClass>
+    <MissingClass>java.nio.file.Files</MissingClass>
+    <MissingClass>java.nio.file.Paths</MissingClass>
+    <MissingClass>java.util.ArrayList</MissingClass>
+    <MissingClass>java.util.List</MissingClass>
+    <MissingClass>javax.swing.BorderFactory</MissingClass>
+    <MissingClass>javax.swing.BoxLayout</MissingClass>
+    <MissingClass>javax.swing.ImageIcon</MissingClass>
+    <MissingClass>javax.swing.JButton</MissingClass>
+    <MissingClass>javax.swing.JCheckBox</MissingClass>
+    <MissingClass>javax.swing.JFileChooser</MissingClass>
+    <MissingClass>javax.swing.JFrame</MissingClass>
+    <MissingClass>javax.swing.JLabel</MissingClass>
+    <MissingClass>javax.swing.JPanel</MissingClass>
+    <MissingClass>javax.swing.JTextField</MissingClass>
+    <MissingClass>org.junit.Assert</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sun, 26 Dec 2021 23:40:45 +0200" total_classes="15" referenced_classes="15" total_bugs="16" total_size="752" num_packages="3" java_version="17.0.1" vm_version="17.0.1+12-LTS-39" cpu_seconds="10.88" clock_seconds="49.47" peak_mbytes="126.00" alloc_mbytes="768.00" gc_seconds="0.05" priority_3="6" priority_2="4" priority_1="6">
+    <PackageStats package="graphics" total_bugs="5" total_types="11" total_size="505" priority_3="5">
+      <ClassStats class="graphics.GUI" sourceFile="GUI.java" interface="false" size="336" bugs="1" priority_3="1"/>
+      <ClassStats class="graphics.GUI$1" sourceFile="GUI.java" interface="false" size="22" bugs="1" priority_3="1"/>
+      <ClassStats class="graphics.GUI$2" sourceFile="GUI.java" interface="false" size="22" bugs="1" priority_3="1"/>
+      <ClassStats class="graphics.GUI$3" sourceFile="GUI.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="graphics.GUI$4" sourceFile="GUI.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="graphics.GUI$5" sourceFile="GUI.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="graphics.GUI$6" sourceFile="GUI.java" interface="false" size="18" bugs="1" priority_3="1"/>
+      <ClassStats class="graphics.GUI$7" sourceFile="GUI.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="graphics.GUI$8" sourceFile="GUI.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="graphics.GUI$9" sourceFile="GUI.java" interface="false" size="18" bugs="1" priority_3="1"/>
+      <ClassStats class="graphics.GUI$ConnectionButtonListener" sourceFile="GUI.java" interface="false" size="16" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="testing" total_bugs="4" total_types="2" total_size="83" priority_2="2" priority_1="2">
+      <ClassStats class="testing.GUITest" sourceFile="GUITest.java" interface="false" size="29" bugs="0"/>
+      <ClassStats class="testing.WebServerTest" sourceFile="WebServerTest.java" interface="false" size="54" bugs="4" priority_2="2" priority_1="2"/>
+    </PackageStats>
+    <PackageStats package="webserver" total_bugs="7" total_types="2" total_size="164" priority_3="1" priority_2="2" priority_1="4">
+      <ClassStats class="webserver.WebServer" sourceFile="WebServer.java" interface="false" size="150" bugs="7" priority_3="1" priority_2="2" priority_1="4"/>
+      <ClassStats class="webserver.WebServer$ServerState" sourceFile="WebServer.java" interface="false" size="14" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="1137" invocations="2" avgMicrosecondsPerInvocation="568704" maxMicrosecondsPerInvocation="639648" standardDeviationMircosecondsPerInvocation="70940"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="116" invocations="219" avgMicrosecondsPerInvocation="532" maxMicrosecondsPerInvocation="97315" standardDeviationMircosecondsPerInvocation="6570"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="105" invocations="116" avgMicrosecondsPerInvocation="910" maxMicrosecondsPerInvocation="18033" standardDeviationMircosecondsPerInvocation="2360"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="95" invocations="116" avgMicrosecondsPerInvocation="823" maxMicrosecondsPerInvocation="27999" standardDeviationMircosecondsPerInvocation="2892"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="94" invocations="15" avgMicrosecondsPerInvocation="6276" maxMicrosecondsPerInvocation="72623" standardDeviationMircosecondsPerInvocation="17940"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="86" invocations="116" avgMicrosecondsPerInvocation="749" maxMicrosecondsPerInvocation="8360" standardDeviationMircosecondsPerInvocation="1324"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="86" invocations="116" avgMicrosecondsPerInvocation="745" maxMicrosecondsPerInvocation="15645" standardDeviationMircosecondsPerInvocation="1753"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="85" invocations="116" avgMicrosecondsPerInvocation="732" maxMicrosecondsPerInvocation="53446" standardDeviationMircosecondsPerInvocation="4949"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="75" invocations="116" avgMicrosecondsPerInvocation="651" maxMicrosecondsPerInvocation="11317" standardDeviationMircosecondsPerInvocation="1290"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="59" invocations="15" avgMicrosecondsPerInvocation="3996" maxMicrosecondsPerInvocation="28147" standardDeviationMircosecondsPerInvocation="9184"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="58" invocations="116" avgMicrosecondsPerInvocation="505" maxMicrosecondsPerInvocation="11803" standardDeviationMircosecondsPerInvocation="1204"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="55" invocations="48" avgMicrosecondsPerInvocation="1159" maxMicrosecondsPerInvocation="36020" standardDeviationMircosecondsPerInvocation="5231"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="54" invocations="91" avgMicrosecondsPerInvocation="601" maxMicrosecondsPerInvocation="15722" standardDeviationMircosecondsPerInvocation="1857"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="46" invocations="222" avgMicrosecondsPerInvocation="209" maxMicrosecondsPerInvocation="7943" standardDeviationMircosecondsPerInvocation="541"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="40" invocations="118" avgMicrosecondsPerInvocation="339" maxMicrosecondsPerInvocation="11012" standardDeviationMircosecondsPerInvocation="1281"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="32" invocations="15" avgMicrosecondsPerInvocation="2139" maxMicrosecondsPerInvocation="12245" standardDeviationMircosecondsPerInvocation="3212"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="31" invocations="15" avgMicrosecondsPerInvocation="2132" maxMicrosecondsPerInvocation="10125" standardDeviationMircosecondsPerInvocation="2641"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="29" invocations="15" avgMicrosecondsPerInvocation="1959" maxMicrosecondsPerInvocation="17842" standardDeviationMircosecondsPerInvocation="4421"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="27" invocations="15" avgMicrosecondsPerInvocation="1820" maxMicrosecondsPerInvocation="8356" standardDeviationMircosecondsPerInvocation="2384"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SynchronizingOnContentsOfFieldToProtectField" totalMilliseconds="27" invocations="15" avgMicrosecondsPerInvocation="1804" maxMicrosecondsPerInvocation="23169" standardDeviationMircosecondsPerInvocation="5723"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
