@@ -18,7 +18,17 @@ import graphics.GUI;
 public class WebServer extends Thread {
 	protected Socket clientSocket;
 
-	private ServerSocket serverSocket = null;
+	
+
+	private volatile ServerSocket serverSocket = null;
+
+	public ServerSocket getServerSocket() {
+		return serverSocket;
+	}
+
+	public void setServerSocket(ServerSocket serverSocket) {
+		this.serverSocket = serverSocket;
+	}
 
 	GUI graphicalInterface;
 
@@ -75,6 +85,7 @@ public class WebServer extends Thread {
 				while(true)
 				{
 					System.out.println("Waiting for Connection");
+					
 					new WebServer(serverSocket.accept(), this.address,this.rootDirectory, this.maintenanceDirectory, this.portNumber, this.serverState);
 				}
 			}
@@ -152,7 +163,7 @@ public class WebServer extends Thread {
 			}
 			request = requestBuilder.toString();
 
-
+			try {
 			String[] requestsLines = request.split("\r\n");
 			String[] requestLine = requestsLines[0].split(" ");
 			String method = requestLine[0];
@@ -165,6 +176,8 @@ public class WebServer extends Thread {
 				String header = requestsLines[h];
 				headers.add(header);
 			}
+			
+			
 
 			String accessLog = String.format("Client %s, method %s, path %s, version %s, host %s, headers %s",
 					clientSocket.toString(), method, path, version, host, headers.toString());
@@ -197,6 +210,13 @@ public class WebServer extends Thread {
 			out.close();
 			in.close();
 			clientSocket.close();
+			}
+			catch(ArrayIndexOutOfBoundsException exception)
+			{
+				out.close();
+				in.close();
+				clientSocket.close();
+			}
 		} catch (IOException e) {
 			System.err.println("Problem with Communication Server");
 			System.exit(1);
@@ -281,6 +301,30 @@ public class WebServer extends Thread {
 		return false;
 	}
 
+	public void startUpServerInNewThread()
+	{
+		 
+		 Thread temp = new Thread(new Runnable() {
 
+			@Override
+			public void run() {
+				startUpServer();
+			}
+			
+		});
+		 System.out.println(getAddress() + " on thread: " + Thread.currentThread().getName());
+		temp.start();
+		try {
+			
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(getAddress() + " on thread: " + Thread.currentThread().getName());
+		
+	}
+	
+	
 
 }

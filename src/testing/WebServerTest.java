@@ -3,6 +3,9 @@ package testing;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.ConnectException;
+import java.net.HttpURLConnection;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -44,25 +47,55 @@ public class WebServerTest {
 		assertNotEquals("Server state should not be equal:", webServer.getServerState(), ServerState.CONNECTED);
 	}
 
-	@Test(expected = IOException.class)
-	public void testStartUpServer()  throws IOException{
-		ServerSocket serverSocket = new ServerSocket(-1);
-		String addressTest = serverSocket.getInetAddress().toString();
-		serverSocket = new ServerSocket(1000);
+	@Test
+	public void testStartUpServer() throws IOException, InterruptedException{
+//		ServerSocket serverSocket = new ServerSocket(-1);
+//		
+		//ServerState serverStateTest = ServerState.CONNECTED;
+		//Socket clientSocket = new Socket(webServer.getAddress(), webServer.getPortNumber());
+		//WebServer webServerTest = new WebServer(clientSocket, webServer.getAddress(), webServer.getRootDirectory(), webServer.getMaintenanceDirectory(), webServer.getPortNumber(), webServer.getServerState());
+		//webServer.startUpServer();
+		webServer.startUpServerInNewThread();
 		
-		ServerState serverStateTest = ServerState.CONNECTED;
-		Socket clientSocket = new Socket(webServer.getAddress(), webServer.getPortNumber());
-		WebServer webServerTest = new WebServer(clientSocket, webServer.getAddress(), webServer.getRootDirectory(), webServer.getMaintenanceDirectory(), webServer.getPortNumber(), webServer.getServerState());
+		assertNotNull("WebServer is not starting up properly!",webServer.getServerSocket());
 		
+		webServer.getServerSocket().close();
 		
 	}
 
 	@Test
 	public void testCloseServer() {
-		fail("Not yet implemented"); // TODO
+		webServer.startUpServerInNewThread();
+		webServer.closeServer();
+		assertTrue("WebServer is not closing up properly!", webServer.getServerSocket().isClosed());
 	}
 
-
+	@Test
+	public void testEmptyRequest() throws IOException {
+		webServer.startUpServerInNewThread();
+		Socket clientSocket = new Socket(webServer.getServerSocket().getInetAddress(),webServer.getPortNumber());
+		assertTrue("Client not connecting properly!", clientSocket.isConnected());
+		clientSocket.close();
+		webServer.getServerSocket().close();
+	
+	}
+	
+	@Test
+	public void testRequest() throws IOException {
+		webServer.startUpServerInNewThread();
+		webServer.setRootDirectory("testRequest");
+		Socket clientSocket = new Socket(webServer.getServerSocket().getInetAddress(), webServer.getPortNumber());
+		PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), false);
+		out.println("GET " + "test" +" HTTP/1.1");
+	    out.println("Host: localhost:" + webServer.getPortNumber());
+	    out.println("Connection: Keep-Alive");
+	    out.println();
+	    out.flush();
+	    
+	    webServer.getServerSocket().close();
+	   // clientSocket.close();
+	}
+	
 	@Test
 	public void testGetAddress() {
 		webServer.setAddress("0.0.0.0");
@@ -91,4 +124,17 @@ public class WebServerTest {
 		assertEquals(webServer.validateMaintenance(), false);
 	}
 
+	@Test
+	public void testSetServerSocket() throws IOException
+	{
+		ServerSocket serverSocket = new ServerSocket(webServer.getPortNumber());
+		
+		webServer.setServerSocket(serverSocket);
+		
+		assertSame("Set Server socket not executing properly",serverSocket, webServer.getServerSocket());
+		
+		webServer.getServerSocket().close();
+	}
+	
+	
 }
